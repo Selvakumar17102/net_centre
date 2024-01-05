@@ -51,15 +51,15 @@ class Listcustomer extends Component
         }
             $activestatus->save();
 
-        $useractivestatus = User::where('email',$email)->first();
+        // $useractivestatus = User::where('email',$email)->first();
 
-        if($value == true){
-            $useractivestatus->status = '0';
-        }else{
-            $useractivestatus->status = '1';
-        }
+        // if($value == true){
+        //     $useractivestatus->status = '0';
+        // }else{
+        //     $useractivestatus->status = '1';
+        // }
 
-        $useractivestatus->save();
+        // $useractivestatus->save();
 
         if(Auth::user()->login_type=="1"){
             return redirect()->route('superadmin.listcustomer');

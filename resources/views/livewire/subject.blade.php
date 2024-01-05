@@ -2,7 +2,7 @@
    <div class="page-meta">
        <nav class="breadcrumb-style-one" aria-label="breadcrumb">
            <ol class="breadcrumb">
-               <li class="breadcrumb-item"><a href="#">Suject</a></li>
+               <li class="breadcrumb-item"><a href="#">Service List</a></li>
                <li class="breadcrumb-item active" aria-current="page">Basic</li>
            </ol>
        </nav>
@@ -16,7 +16,7 @@
                    <div class="widget-header">
                        <div class="row">
                            <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                               <h4>Edit Subject</h4>
+                               <h4>Edit Service</h4>
                            </div>                 
                        </div>
                    </div>
@@ -24,8 +24,8 @@
                        <div class="row" style="margin: 30px">
                            <div class="col-lg-6 col-12 ">
                                <div class="form-group">
-                                   <label for="t-text">Subject</label>
-                                   <input  placeholder="Subject..." class="form-control" wire:model="editsubject">
+                                   <label for="t-text">Service</label>
+                                   <input  placeholder="Service..." class="form-control" wire:model="editsubject">
                                    @error('editsubject')
                                    <span class="error text-danger">{{ $message }}</span>
                                    @enderror
@@ -48,7 +48,7 @@
                    <div class="widget-header">
                        <div class="row">
                            <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                               <h4>Add Subject</h4>
+                               <h4>Add Service</h4>
                            </div>                 
                        </div>
                    </div>
@@ -56,8 +56,8 @@
                        <div class="row" style="margin: 30px">
                            <div class="col-lg-6 col-12 ">
                                <div class="form-group">
-                                   <label for="t-text">Subject</label>
-                                   <input  placeholder="Subject..." class="form-control" wire:model="addsubject">
+                                   <label for="t-text">Service</label>
+                                   <input  placeholder="Service..." class="form-control" wire:model="addsubject">
                                    @error('addsubject')
                                    <span class="error text-danger">{{ $message }}</span>
                                    @enderror
@@ -82,7 +82,7 @@
                    <thead>
                        <tr>
                            <th class="text-center">S No</th>
-                           <th class="text-center">Suject</th>
+                           <th class="text-center">Service</th>
                            <th class="no-content text-center">Action</th>
                        </tr>
                    </thead>

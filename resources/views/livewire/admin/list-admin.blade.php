@@ -7,7 +7,7 @@
                     <div class="page-meta">
                         <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Admin Table</a></li>
+                                <li class="breadcrumb-item"><a href="#">Employee Table</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Basic</li>
                             </ol>
                         </nav>
@@ -17,7 +17,7 @@
                     <div class="page-meta">
                         <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li><a href="{{route("superadmin.addadmin")}}" class="mt-4 btn btn-primary">Add Admin</a></li>
+                                <li><a href="{{route("superadmin.addadmin")}}" class="mt-4 btn btn-primary">Add Employee</a></li>
                             </ol>
                         </nav>
                     </div>

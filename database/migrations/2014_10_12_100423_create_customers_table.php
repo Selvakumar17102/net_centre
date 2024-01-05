@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('admin_id')->unsigned()->index()->nullable();
             $table->foreign('admin_id')->references('id')->on('admins');
             $table->string('name')->nullable();
-            $table->integer('account_number')->nullable();
+            $table->string('account_number')->nullable();
             $table->string('company_name')->nullable();
             $table->string('address_line_1')->nullable();
             $table->string('address_line_2')->nullable();
@@ -27,11 +27,11 @@ return new class extends Migration
             $table->string('city')->nullable();
             $table->string('salutation')->nullable();
             $table->string('email')->unique();
-            $table->string('status')->default(0);
+            $table->string('status')->default(1);
             $table->string('phone_number')->nullable();
             $table->string('whatsapp_number')->nullable();
             $table->string('position')->nullable();
-            $table->string('password');
+            $table->string('password')->nullable();
             $table->string('profile_image')->nullable();
             $table->timestamps();
         });

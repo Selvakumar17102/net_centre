@@ -7,16 +7,12 @@
                     <thead>
                         <tr>
                             <th>S.no</th>
-                            <th>Login</th>
                             <th>Full Name</th>
                             <th>Accound No</th>
-                            <th>Salutation</th>
+                            <th>Service</th>
                             <th>Email</th>
                             <th>Phone No</th>
                             <th>Status</th>
-                            @if (Auth::user()->login_type=="1")
-                                <th class="text-center">Admin</th>
-                            @endif
                             <th>View</th>
                             <th class="no-content">Action</th>
                         </tr>
@@ -25,16 +21,14 @@
                        
                         @foreach($customerlist as $data)
                         @php
-                            $admin_name = \App\Models\Admin::where('id',$data->admin_id)->first();
+                            $service = \App\Models\Subject::where('id',$data->salutation)->first();
+                            $pay = \App\Models\CompanyList::where('id',$data->company_name)->first();
                         @endphp
                             <tr>
                                 <td>{{ $loop->index+1 }}</td>
-                                <td>
-                                    <button class="btn add-tsk btn-primary" wire:click="sendId({{$data->id}})"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-in"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg></button>
-                                </td>
                                 <td>{{$data->name}}</td>
-                                <td>{{$data->account_number}}</td>
-                                <td>{{$data->salutation}}</td>
+                                <td class="checkbox-column text-center"><a href="#"><span class="badge badge-light-success">{{$data->account_number}}</span></a></td>
+                                <td>{{$service->subject}}</td>
                                 <td>{{$data->email}}</td>
                                 <td>{{$data->phone_number}}</td>
                                 <td class="text-center">
@@ -45,14 +39,12 @@
                                         </div>
                                     </div>
                                     @if ($data->status == 0)
-                                        <p style="color: green">Active</p>
+                                        <p style="color: green">Paid</p>
                                     @else
-                                        <p style="color:red">Decative</p>    
+                                        <p style="color:red">Follow up</p>    
                                     @endif
                                 </td>
-                                @if (Auth::user()->login_type=="1")
-                                <td>{{$admin_name->name}}</td>
-                                @endif
+                                
                                 <td>
                                     <a class="btn add-tsk btn-primary" data-bs-toggle="modal" data-bs-target="#addTaskModal{{ $loop->index+1 }}">View</a>
                                     <div class="modal fade" id="addTaskModal{{ $loop->index+1 }}" tabindex="-1" role="dialog" aria-labelledby="addTaskModalTitle" aria-hidden="true">
@@ -68,37 +60,27 @@
                                                             <div class="row">
         
                                                                 <div class="col-lg-6 col-sm-6 col-12">
-                                                                    <h6 >Position</h6>
-                                                                    <p  class="modal-text ">{{$data->position}}</p>
-                                                                    <hr>
-                                                                    <h6 >Company Name</h6>
-                                                                    <p  class="modal-text ">{{$data->company_name}}</p>
+                                                                    <h6 >Payment Method</h6>
+                                                                    <p  class="modal-text ">{{$pay->company_name}}</p>
                                                                     <hr>
                                                                     <h6 >whatsapp Number</h6>
                                                                     <p  class="modal-text ">{{$data->whatsapp_number}}</p>
                                                                     <hr>
-                                                                    <h6 >City</h6>
-                                                                    <p  class="modal-text ">{{$data->city}}</p>
-                                                                    <hr>
-                                                                    <h6 >State</h6>
-                                                                    <p class="modal-text ">{{$data->state}}</p>
-                                                                    <hr>
-                                                                    <h6 >Postcode</h6>
-                                                                    <p  class="modal-text ">{{$data->post_code}}</p>
-                                                                </div>
-                                                                <div class="col-lg-6 col-sm-6 col-12">
-                                                                    
                                                                     <h6 >Address Line 1</h6>
                                                                     <p  class="modal-text ">{{$data->address_line_1}}</p>
                                                                     <hr>
-                                                                    <h6 >Address Line 2</h6>
-                                                                    <p  class="modal-text ">{{$data->address_line_2}}</p>
+                                                                    
+                                                                </div>
+                                                                <div class="col-lg-6 col-sm-6 col-12">
+                                                                    
+                                                                    <h6 >Service Amonut</h6>
+                                                                    <p  class="modal-text ">₹ {{$data->address_line_2}}</p>
                                                                     <hr>
-                                                                    <h6 >Address Line 3</h6>
-                                                                    <p  class="modal-text ">{{$data->address_line_3}}</p>
+                                                                    <h6 >Profit Amount</h6>
+                                                                    <p  class="modal-text ">₹ {{$data->address_line_3}}</p>
                                                                     <hr>
-                                                                    <h6 >Address Line 4</h6>
-                                                                    <p  class="modal-text ">{{$data->address_line_4}}</p>
+                                                                    <h6 >Total Amount</h6>
+                                                                    <p  class="modal-text ">₹ {{$data->address_line_4}}</p>
                                                                     <hr>
                                                                 </div>
                                                             </div>

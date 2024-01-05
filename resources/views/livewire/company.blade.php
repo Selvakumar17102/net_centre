@@ -2,7 +2,7 @@
     <div class="page-meta">
         <nav class="breadcrumb-style-one" aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Company</a></li>
+                <li class="breadcrumb-item"><a href="#">Payment mode</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Basic</li>
             </ol>
         </nav>
@@ -16,7 +16,7 @@
                     <div class="widget-header">
                         <div class="row">
                             <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                <h4>Edit Company</h4>
+                                <h4>Edit Payment</h4>
                             </div>                 
                         </div>
                     </div>
@@ -24,8 +24,8 @@
                         <div class="row" style="margin: 30px">
                             <div class="col-lg-6 col-12 ">
                                 <div class="form-group">
-                                    <label for="t-text">Company Name</label>
-                                    <input  placeholder="Company Name..." class="form-control" wire:model="editcompanyname">
+                                    <label for="t-text">Payment Name</label>
+                                    <input  placeholder="Payment Name..." class="form-control" wire:model="editcompanyname">
                                     @error('editcompanyname')
                                     <span class="error text-danger">{{ $message }}</span>
                                     @enderror
@@ -48,7 +48,7 @@
                     <div class="widget-header">
                         <div class="row">
                             <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                <h4>Add Company</h4>
+                                <h4>Add Payment</h4>
                             </div>                 
                         </div>
                     </div>
@@ -56,8 +56,8 @@
                         <div class="row" style="margin: 30px">
                             <div class="col-lg-6 col-12 ">
                                 <div class="form-group">
-                                    <label for="t-text">Company Name</label>
-                                    <input  placeholder="Company Name..." class="form-control" wire:model="companyname">
+                                    <label for="t-text">Payment Name</label>
+                                    <input  placeholder="Payment Name..." class="form-control" wire:model="companyname">
                                     @error('companyname')
                                     <span class="error text-danger">{{ $message }}</span>
                                     @enderror
@@ -82,7 +82,7 @@
                     <thead>
                         <tr>
                             <th class="text-center">S No</th>
-                            <th class="text-center">Company Name</th>
+                            <th class="text-center">Payment Name</th>
                             <th class="no-content text-center">Action</th>
                         </tr>
                     </thead>
